@@ -87,4 +87,42 @@ public class Main {
     }
 }
 
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        // 初始化寻找数据
+        int research_num_1, research_num_2;
+
+        // 返回当前数据的位置
+        int[] data_place = new int[2];
+
+
+        // 设立寻找标志位，若找到 则返回1结束外循环
+        int find_flag = 0;
+
+        int j;
+        // 然后对target进行排序组合
+        for (j = 0; j < nums.length; j++) {
+            // 从第0个开始找，一个一个遍历
+            research_num_1 = nums[j];
+            // 得到需要的数据;
+            research_num_2 = target - research_num_1;
+            // 开始遍历 如果第一次遍历完没有合适的，后续不需要再遍历前面的
+            for (int i = j + 1; i < nums.length; i++) {
+                if (research_num_2 == nums[i]) {
+                    data_place[0] = j;
+                    data_place[1] = i;
+                    find_flag = 1;
+                    break;
+                }
+            }
+
+            if (find_flag == 1) {
+                break;
+            }
+        }
+        return data_place;
+    }
+}
+
+
 
