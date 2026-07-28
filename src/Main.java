@@ -85,9 +85,8 @@ public class Main {
             }
         }
     }
-}
 
-class Solution {
+    // Leetcode第一题自己的暴力解法
     public int[] twoSum(int[] nums, int target) {
         // 初始化寻找数据
         int research_num_1, research_num_2;
@@ -123,6 +122,10 @@ class Solution {
         // 返回数组数据
         return data_place;
     }
+}
+
+class Solution {
+
 }
 
 
